@@ -36,20 +36,18 @@ def list_of_directors(source)
 end
 
 def total_gross(source)
-
-  # 1. directors_totals: returns a Hash of { dir_name => gross }
-  # 2. list_of_directors: names provides an Array of directors names (use
-
-  # Visit each key (i.e. director name), look up the value in the hash
-  # returned by directors_totals, and add it to a running total. When done,
-  # return the total
+  dir_names = list_of_directors(source)
+  dir_to_earnings_hash = directors_totals(source)
+  j = 0 
   
   total = 0
-  j = 0 
-  while j < list_of_directors(source).length 
-       total += directors_totals(source)
-    j += 1 
+  
+  while j < dir_names.length 
+       dir_name = dir_names[i]
+       total += dir_to_earnings_hash[dir_name]
+       j += 1 
   end
+  
   return total 
 end
 
