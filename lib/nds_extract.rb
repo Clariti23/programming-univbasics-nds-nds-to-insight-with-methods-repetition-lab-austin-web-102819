@@ -43,7 +43,7 @@ def total_gross(source)
   total = 0
   
   while j < dir_names.length 
-       dir_name = dir_names[i]
+       dir_name = dir_names[j]
        total += dir_to_earnings_hash[dir_name]
        j += 1 
   end
